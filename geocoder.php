@@ -86,15 +86,24 @@ copy_clipboard(document.getElementById(str).value)
             zoomControl: true
         }).setView([40.6666,16.6112], 16);
 
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+       var osm=new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution: ''
         }).addTo(map);
 var osmGeocoder = new L.Control.OSMGeocoder();
 
-		map.addControl(osmGeocoder);
+		 map.addControl(osmGeocoder);
 
+var transport = L.tileLayer('http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png', {
+		attribution: 'Map &copy; Pacific Rim Coordination Center (PRCC).  Certain data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+	});
+ 
 
+var layerControl = new L.Control.Layers({
+		'OSM': osm,
+		'Transport': transport 
+	}, null, {position: 'topright'});
 
+layerControl.addTo(map);
     </script>
     
 </body>
