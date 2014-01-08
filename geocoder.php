@@ -49,16 +49,62 @@ position:fixed;
         padding:5px;
         box-shadow: 0 3px 14px rgba(0,0,0,0.4)
 }
+#botonera {
+			position:fixed;
+			top:10px;
+			left:50px;
+			z-index: 2;
+		}
+
+
+		.boton {
+			border: 1px solid #96d1f8;
+			background: #65a9d7;
+			background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+			background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+			background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+			background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+			background: -o-linear-gradient(top, #3e779d, #65a9d7);
+			padding: 10px 5px;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+			-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+			box-shadow: rgba(0,0,0,1) 0 1px 0;
+			text-shadow: rgba(0,0,0,.4) 0 1px 0;
+			color: white;
+			font-size: 12px;
+			/*font-family: Helvetica, Arial, Sans-Serif;*/
+			text-decoration: none;
+			vertical-align: middle;
+		}
+		.boton:hover {
+			border-top-color: #28597a;
+			background: #28597a;
+			color: #ccc;
+		}
+		.boton:active {
+			border-top-color: #1b435e;
+			background: #1b435e;
+		}
     </style>
 </head> 
 <body>
 
     <div id="map" ></div>
 <div id="infodiv" style="leaflet-popup-content-wrapper">
-<b>Semplice Geocoder</b></br>
+<div id="botonera">
+<!-- <button onClick="" class="boton">Coordinate al centro</button> -->
+		</div>
+<b>Semplice geocoder, reverse geocoder, coordinate capture</b></br>
 Con il tasto destro del mouse fare "Mostra coordinate" per avere Lat e Lon. Usare il tasto ricerca per luogo in alto a destra. Infine cliccando sull'icona OSM e poi su un nome della mappa, si avranno le informazioni OpenStreetMap relative al quel punto &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors lic. ODbL | @Piersoft</div>
     <script>
 
+function coordinate(e)
+{
+	alert(e.latlng);
+}
 
   function showCoordinates (e) {
 var str=e.latlng;
@@ -70,7 +116,9 @@ copy_clipboard(document.getElementById(str).value)
       }
 
       function centerMap (e) {
-         map.panTo(e.latlng);
+        // map.panTo(e.latlng);
+alert(e.latlng);
+
       }
 
            var map = L.map('map', {contextmenu: true,
@@ -104,6 +152,8 @@ var layerControl = new L.Control.Layers({
 	}, null, {position: 'topright'});
 
 layerControl.addTo(map);
+
+
     </script>
     
 </body>
