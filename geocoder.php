@@ -56,7 +56,7 @@ position:fixed;
     <div id="map" ></div>
 <div id="infodiv" style="leaflet-popup-content-wrapper">
 <b>Semplice Geocoder</b></br>
-Con il tasto destro del mouse fare "Mostra coordinate" per avere Lat e Lon. Usare il tasto ricerca per luogo in alto a destra. Infine cliccando sull'icona OSM e poi su un nome della mappa, si avranno le informazioni OpenStreetMap relative al quel punto &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors | @Piersoft</div>
+Con il tasto destro del mouse fare "Mostra coordinate" per avere Lat e Lon. Usare il tasto ricerca per luogo in alto a destra. Infine cliccando sull'icona OSM e poi su un nome della mappa, si avranno le informazioni OpenStreetMap relative al quel punto &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors lic. ODbL | @Piersoft</div>
     <script>
 
 
